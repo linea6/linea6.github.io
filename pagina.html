@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<!-- LA CONTRASEÑA ES "helloworld" -->
+<head>
+<style>
+body {
+	background-image: url("textura.JPG");
+}
+h1 {
+    color: orangered;
+    font-family: verdana;
+    font-size: 500%;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 1px 13px 43px #FF0000, 1px -16px 25px #FFFF00;
+}
+h2 {
+	color: chocolate;
+	font-size: 80%;
+	font-style: bold;
+	text-align: center;
+}
+p  {
+    color: chartreuse;
+    font-family: arial;
+    font-size: 100%;
+    text-shadow: 0px 0px 2px #2F4F4F,3px 3px 2px #2F4F4F;
+}
+</style>
+</head>
+<body>
+		<script type='text/javascript'>
+			var fallObjects=new Array();function newObject(url,height,width){fallObjects[fallObjects.length]=new Array(url,height,width);}
+
+			var numObjs=240, waft=10, fallSpeed=80, wind=15;
+			newObject("http://2.bp.blogspot.com/--fII5xz-9vY/UM-djWHHwgI/AAAAAAAABrI/tEKS6_ctv_k/s400/nieve2_jessi_diyva.png",22,22);
+			newObject("http://3.bp.blogspot.com/-DPHwVIctTlg/UM-di9jKOiI/AAAAAAAABq8/wV567ynxL2U/s400/nieve1_jessi_diyva.png",22,22);
+
+			function winSize(){winWidth=(moz)?window.innerWidth-180:document.body.clientWidth-180;winHeight=(moz)?window.innerHeight+500:document.body.clientHeight+500;}
+			function winOfy(){winOffset=(moz)?window.pageYOffset:document.body.scrollTop;}
+			function fallObject(num,vari,nu){
+			objects[num]=new Array(parseInt(Math.random()*(winWidth-waft)),-30,(parseInt(Math.random()*waft))*((Math.random()>0.5)?1:-1),0.02+Math.random()/20,0,1+parseInt(Math.random()*fallSpeed),vari,fallObjects[vari][1],fallObjects[vari][2]);
+			if(nu==1){document.write('<img id="fO'+i+'" style="position:fixed;" src="'+fallObjects[vari][0]+'">'); }
+			}
+			function fall(){
+			for(i=0;i<numObjs;i++){
+			var fallingObject=document.getElementById('fO'+i);
+			if((objects[i][1]>(winHeight-(objects[i][5]+objects[i][7])))||(objects[i][0]>(winWidth-(objects[i][2]+objects[i][8])))){fallObject(i,objects[i][6],0);}
+			objects[i][0]+=wind;objects[i][1]+=objects[i][5];objects[i][4]+=objects[i][3];
+			with(fallingObject.style){ top=objects[i][1]+winOffset+'px';left=objects[i][0]+(objects[i][2]*Math.cos(objects[i][4]))+'px';}
+			}
+			setTimeout("fall()",31);
+			}
+			var objects=new Array(),winOffset=0,winHeight,winWidth,togvis,moz=(document.getElementById&&!document.all)?1:0;winSize();
+			for (i=0;i<numObjs;i++){fallObject(i,parseInt(Math.random()*fallObjects.length),1);}
+			fall();
+		</script>
+	<h1 style="background-image:url('http://www.drfrankensguitar.com/wp-content/uploads/2013/06/metal.png'); background-repeat: repeat-y;" >
+		Mi primera página
+	</h1>
+		<p>
+			<img src="http://www.gifs-animados.es/gifs-imagenes/g/gatos/gifs-animados-gatos-8581312.gif" style="float:right;width:300px;height:442px;">
+			HOLA HUMANO, ESPERO QUE SEA DE TU AGRADO ESTA PAGINA QUE HICE PARA TI, REVISANDO EN INTERNET ENCONTRE QUE ESTE TIPO DE PAGINAS SON LAS MAS COMPARTIDAS POR LOS USUARIOS, COMO USTEDES DICEN MI PAGINA ESTA "PARA UN MEME". <br><br><br><br><br><br> PODRAS NOTAR QUE ESTA PAGINA CUENTA CON DISTINTOS ELEMENTOS PARA MANTENER TU ATENCION Y DADO QUE EN TU PAIS SE ACERCA LA FESTIVIDAD QUE USTEDES LLAMAN NAVIDAD ESTA PAGINA CUENTA CON ELEMENTOS NAVIDEÑOS COMO LA NIEVE.
+		</p>
+	<h2 style="background-image:url('https://media1.tenor.com/images/fa93a9d000072250f8cd88e6cc440ccc/tenor.gif?itemid=4623118'); width: 350px;height:280px;">
+		ctrl+shift+I 
+	</h2>
+</body>
+</html>
